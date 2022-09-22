@@ -4,16 +4,18 @@
         "dotenv": "^16.0.1",
         "express": "^4.18.1",
         "mongodb": "^4.7.0",
-        "nodemon": "^2.0.16"
+        "netlify-lambda": "^2.0.15",
+        "nodemon": "^2.0.16",
+        "serverless-http": "^3.0.2"
     },
     "name": "hotel-booking-server",
     "version": "1.0.0",
     "main": "index.js",
-    "devDependencies": {},
     "scripts": {
-        "start": "node index.js",
+        "start": "./node_modules/.bin/netlify-lambda serve src",
         "start-dev": "nodemon index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "./node_modules/.bin/netlify-lambda build src"
     },
     "keywords": [],
     "author": "",
